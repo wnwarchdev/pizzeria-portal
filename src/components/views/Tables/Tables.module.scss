@@ -2,4 +2,15 @@
 
 .component {
   padding: $base-size;
+
+  h2 {
+    background-color: $color-glyph;
+    color: $color-glyphInvert;
+    text-align: center;
+  }
+}
+
+.link {
+  padding: $base-size;
+  display: block;
 }
