@@ -19,8 +19,8 @@
     +row is 30 minute interval
     +should match google calendar week layout - tables instead of days in columns
     +on click at reservation/event, should redirect to corresponding pages
-'/tables/booking/:id'
 
+'/tables/booking/:id'
   -has all info on particular reservation
   -allows edit and save of updates
 
