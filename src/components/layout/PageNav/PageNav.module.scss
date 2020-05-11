@@ -2,7 +2,8 @@
 
 .component {
   padding: $base-size;
-  display: flex;
+  margin-left: auto;
+  /*display: flex;
   justify-content: space-around;
   a {
     text-decoration: none;
@@ -13,5 +14,9 @@
       color: $color-glyphInvert;
       transition: .2s ease-in-out;
     }
-  }
+  }*/
+}
+
+.link {
+  color: inherit;
 }
