@@ -20,11 +20,9 @@ import { purple } from '@material-ui/core/colors';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      // Purple and green play nicely together.
       main: purple[500],
     },
     /*secondary: {
-      // This is green.A700 as hex.
       main: '#11cb5f',
     },*/
   },
@@ -33,9 +31,9 @@ const theme = createMuiTheme({
 function App() {
   return (
     <BrowserRouter basename={'/panel'}>
-      <MainLayout>
+      <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <StylesProvider injectFirst>
+          <MainLayout>
             <Switch>
               <Route exact path={process.env.PUBLIC_URL} component={Dashboard} />
               <Route exact path={process.env.PUBLIC_URL + '/login'} component={Login} />
@@ -49,9 +47,9 @@ function App() {
               <Route exact path={process.env.PUBLIC_URL + '/waiter/orderNew'} component={WaiterOrderNew} />
               <Route exact path={process.env.PUBLIC_URL + '/kitchen'} component={Kitchen} />
             </Switch>
-          </StylesProvider>
+          </MainLayout>
         </ThemeProvider>
-      </MainLayout>
+      </StylesProvider>
     </BrowserRouter>
   );
 }

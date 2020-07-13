@@ -1,20 +1,8 @@
 @import '../../../styles/settings.scss';
 
 .component {
-  padding: $base-size;
+  padding: $base-size 0;
   margin-left: auto;
-  /*display: flex;
-  justify-content: space-around;
-  a {
-    text-decoration: none;
-    border: 1px solid $color-glyph;
-    padding: inherit;
-    &:hover {
-      background-color: $color-glyph;
-      color: $color-glyphInvert;
-      transition: .2s ease-in-out;
-    }
-  }*/
 }
 
 .link {

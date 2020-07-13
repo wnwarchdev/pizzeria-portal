@@ -4,18 +4,6 @@
   box-sizing: border-box;
 }
 
-/*
-body {
-  background-color: $color-background;
-  font-family: $font-text;
-  max-width: 1500px;
-  margin:0 auto;
-  border: 1px solid $color-glyph;
-}
-
- a, a:visited, a:hover, a:active {
-  color: inherit;
-} */
 
 @import "./typography.scss";
 @import "./normalize.scss";

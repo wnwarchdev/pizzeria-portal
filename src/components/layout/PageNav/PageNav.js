@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './PageNav.module.scss';
-import Button from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
 
 const PageNav = () => (
   <nav className={styles.component}>
