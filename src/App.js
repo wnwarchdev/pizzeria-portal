@@ -15,12 +15,11 @@ import Kitchen from './components/views/Kitchen/Kitchen';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { StylesProvider } from '@material-ui/core/styles';
-import { purple } from '@material-ui/core/colors';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: '#2B4C6F',
     },
     /*secondary: {
       main: '#11cb5f',

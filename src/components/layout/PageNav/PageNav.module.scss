@@ -3,6 +3,18 @@
 .component {
   padding: $base-size 0;
   margin-left: auto;
+  display: flex;	
+  justify-content: space-around;	
+  a {	
+    color: $color-glyphInvert;
+    text-decoration: none;	
+    padding: 5px;	
+    &:hover {	
+      background-color: $color-glyph;	
+      color: $color-glyphInvert;	
+      transition: .2s ease-in-out;	
+    }	
+  }
 }
 
 .link {
