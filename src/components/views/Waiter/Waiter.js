@@ -23,7 +23,6 @@ const renderActions = status => {
       return (
         <>
           <Button>thinking</Button>
-          <Button>new order</Button>
         </>
       );
     case 'thinking':
@@ -73,7 +72,7 @@ const Waiter = () => (
             </TableCell>
             <TableCell>
               {row.order && (
-                <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                <Button href={`${process.env.PUBLIC_URL}/panel/waiter/order/${row.order}`}>
                   {row.order}
                 </Button>
               )}
