@@ -2,8 +2,19 @@
 
 .component {
   padding: $base-size;
+  margin-bottom: 20px;
   h2 {
     text-align: center;
-    border-bottom: 1px solid $color-glyph;
   }
+}
+
+.button {
+  padding: $base-size;
+  margin: 0px 10px;
+}
+
+.note {
+  padding: $base-size;
+  margin: 0px 10px;
+  background: rgb(255, 255, 195);
 }

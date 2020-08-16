@@ -14,3 +14,24 @@
   padding: $base-size;
   display: block;
 }
+
+.datePicker {
+  padding: $base-size;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 100px;
+  margin-left:50%;
+  transform: translate(-50%,0);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  //border: 1px solid black;
+  form: {
+    display: block;
+  }
+}
+
+.button {
+  padding: $base-size;
+  margin: 0px 10px;
+}

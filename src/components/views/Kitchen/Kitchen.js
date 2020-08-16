@@ -6,13 +6,14 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 
 const demoContent = [
-  {id: '53', status: 'ready', description: 'pizza; pizza; beer; wine'},
-  {id: '54', status: 'cancelled', description: 'pizza; wine'},
-  {id: '55', status: 'new', description: 'coffee'},
-  {id: '56', status: 'new', description: 'spaghetti; wine; pizza; wine; water'},
+  {id: '12121', status: 'ready', description: 'pizza; pizza; beer; wine'},
+  {id: '23232', status: 'cancelled', description: 'pizza; wine'},
+  {id: '97979', status: 'new', description: 'coffee'},
+  {id: '12345', status: 'new', description: 'spaghetti; wine; pizza; wine; water'},
 ];
 
 
@@ -42,6 +43,10 @@ const Kitchen = () => (
         ))}
       </TableBody>
     </Table>
+    <Button className={styles.button} variant="outlined" color="secondary" href=''>Open Break</Button>
+    <Button className={styles.button} variant="outlined" color="secondary" href='' disabled >End Break</Button>
+    <Button className={styles.button} variant="outlined" color="secondary" href=''>Waiter</Button>
+    <Button className={styles.button} variant="contained" color="secondary" href='' >Distress</Button>
   </Paper>
 );
 
