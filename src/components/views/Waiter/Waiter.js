@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 
 class Waiter extends React.Component {
   static propTypes = {
@@ -17,6 +18,7 @@ class Waiter extends React.Component {
       active: PropTypes.bool,
       error: PropTypes.any,
     }),
+    toggleTableStatus: PropTypes.func,
   }
 
   componentDidMount(){
@@ -24,33 +26,38 @@ class Waiter extends React.Component {
     fetchTables();
   }
 
-  renderActions(status){
+  renderActions(id, status){
+    const {toggleTableStatus} = this.props;
     switch (status) {
       case 'free':
         return (
-          <>
-            <Button variant="contained" color="secondary">new order</Button>
-          </>
+          <Button variant="contained" onClick={()=> toggleTableStatus(id, 'thinking')}>new customer</Button>
         );
       case 'thinking':
         return (
-          <Button variant="contained" color="primary">thinking</Button>
+          <div>
+            <Button onClick={()=> toggleTableStatus(id, 'thinking')}>thinking</Button>
+            <br></br>
+            <Button color="primary" onClick={()=> toggleTableStatus(id, 'paid')}>cancel</Button>
+            <br></br>
+            <Button color="secondary" component={Link} to={`${process.env.PUBLIC_URL}/waiter/orderNew`}>add order</Button>
+          </div>
         );
       case 'ordered':
         return (
-          <Button>prepared</Button>
+          <Button variant="outlined" onClick={()=> toggleTableStatus(id, 'prepared')}>prepared</Button>
         );
       case 'prepared':
         return (
-          <Button>delivered</Button>
+          <Button variant="outlined" onClick={()=> toggleTableStatus(id, 'delivered')}>delivered</Button>
         );
       case 'delivered':
         return (
-          <Button>paid</Button>
+          <Button variant="outlined" onClick={()=> toggleTableStatus(id, 'paid')}>paid</Button>
         );
       case 'paid':
         return (
-          <Button>free</Button>
+          <Button variant="outlined" onClick={()=> toggleTableStatus(id, 'free')}>free</Button>
         );
       default:
         return null;
@@ -96,13 +103,13 @@ class Waiter extends React.Component {
                   </TableCell>
                   <TableCell>
                     {row.order && (
-                      <Button to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
+                      <Button component={Link}  to={`${process.env.PUBLIC_URL}/waiter/order/${row.order}`}>
                         {row.order}
                       </Button>
                     )}
                   </TableCell>
                   <TableCell>
-                    {this.renderActions(row.status)}
+                    {this.renderActions(row.id, row.status)}
                   </TableCell>
                 </TableRow>
               ))}
