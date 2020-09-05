@@ -42,7 +42,7 @@ export const postToAPI = (id, status) => {
     dispatch(fetchStarted());
 
     Axios
-      .get(`${api.url}/${api.tables}`)
+      .put(`${api.url}/${api.tables}/${id}`, { id: id, status: status })
       .then(() => {
         dispatch(toggleTableStatus(id, status));
       })
